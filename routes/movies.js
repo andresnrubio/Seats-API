@@ -1,12 +1,11 @@
 const express = require("express");
 const router = express.Router();
 
-//Aqui se genera RUTA para consulta y manejo de las peliculas (CRUD)
-//http://localhost/movies
+//* Importacion de controladores
+const {getMovies} = require("../controllers/movies")
 
-router.get("/", (req, res) => {
-  const data = ["hola", "mundo"];
-  res.send({ data });
-});
+//Aqui se genera RUTA para consulta y manejo de las peliculas (CRUD)
+
+router.get("/", getMovies);
 
 module.exports = router;
